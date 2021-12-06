@@ -11,14 +11,14 @@ function Section({
 }) {
   return (
     <Wrap bgImage={backgroundImg}>
-      <Fade bottom>
+      <Fade top>
         <ItemText>
           <h1>{title}</h1>
           <p>{description}</p>
         </ItemText>
       </Fade>
       <GroupButtons>
-        <Fade bottom>
+        <Fade top>
           <TextButtons>
             <LeftButton>{leftBtnText}</LeftButton>
             {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
@@ -47,6 +47,7 @@ const Wrap = styled.div`
 const ItemText = styled.div`
   padding-top: 15vh;
   text-align: center;
+  z-index: 1 !important;
 `;
 
 const GroupButtons = styled.div``;
