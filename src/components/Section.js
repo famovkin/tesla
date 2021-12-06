@@ -1,17 +1,23 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 
-function Section() {
+function Section({
+  title,
+  description,
+  leftBtnText,
+  rightBtnText,
+  backgroundImg,
+}) {
   return (
-    <Wrap>
+    <Wrap bgImage={backgroundImg}>
       <ItemText>
-        <h1>Model S</h1>
-        <p>Order Online for Toucless Delivery</p>
+        <h1>{title}</h1>
+        <p>{description}</p>
       </ItemText>
       <GroupButtons>
         <TextButtons>
-          <LeftButton>Custom Order</LeftButton>
-          <RightButton>Existing Inventory</RightButton>
+          <LeftButton>{leftBtnText}</LeftButton>
+          {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
         </TextButtons>
         <DownArrow src="/images/down-arrow.svg"></DownArrow>
       </GroupButtons>
@@ -24,13 +30,13 @@ export default Section;
 const Wrap = styled.div`
   height: 100vh;
   width: 100vw;
-  background-image: url("images/model-s.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-image: ${(props) => `url("images/${props.bgImage}")`};
 `;
 
 const ItemText = styled.div`
