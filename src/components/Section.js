@@ -24,7 +24,7 @@ function Section({
             {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
           </TextButtons>
         </Fade>
-        <DownArrow src="/images/down-arrow.svg"></DownArrow>
+        <DownArrow src="https://famovkin.github.io/tesla/images/down-arrow.svg"></DownArrow>
       </GroupButtons>
     </Wrap>
   );
@@ -41,7 +41,8 @@ const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-image: ${(props) => `url("images/${props.bgImage}")`};
+  background-image: ${(props) =>
+    `url("https://famovkin.github.io/tesla/images/${props.bgImage}")`};
 `;
 
 const ItemText = styled.div`

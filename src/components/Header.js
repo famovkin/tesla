@@ -8,7 +8,7 @@ function Header() {
   return (
     <Container>
       <Logo>
-        <img src="/images/logo.png" />
+        <img src="https://famovkin.github.io/tesla/images/logo.png" />
       </Logo>
       <Menu>
         <a href="#">Model S</a>
