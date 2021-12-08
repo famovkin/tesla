@@ -98,7 +98,7 @@ const animateDown = keyframes`
   }
 
   60% {
-    tranform: translateY(8px);
+    transform: translateY(3px);
   }
 }
 `;
