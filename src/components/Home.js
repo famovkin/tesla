@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import Section from "./Section";
 
-function Home() {
+function Home(props) {
   return (
-    <Container>
+    <Container isBlured={props.menuState}>
       <Section
         title="Model S"
         description="Order Online for Toucless Delivery"
@@ -62,4 +62,6 @@ export default Home;
 
 const Container = styled.div`
   height: 100vh;
+  filter: ${(props) => (props.isBlured ? "blur(5px);" : "none;")};
+  transition: filter 0.35s ease-in;
 `;

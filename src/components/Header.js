@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import CloseIcon from "@mui/icons-material/Close";
 
-function Header() {
-  const [burgerState, setBurgerState] = useState(false);
-
+function Header(props) {
+  console.log(props);
   return (
     <Container>
-      <Logo>
+      <Logo isBlured={props.menuState}>
         <img src="https://famovkin.github.io/tesla/images/logo.png" />
       </Logo>
-      <Menu>
+      <Menu isBlured={props.menuState}>
         <a href="#">Model S</a>
         <a href="#">Model 3</a>
         <a href="#">Model X</a>
@@ -21,14 +20,14 @@ function Header() {
       <RightMenu>
         <a href="#">Shop</a>
         <a href="#">Account</a>
-        <CustomMenu onClick={() => setBurgerState(true)}>
+        <CustomMenu onClick={props.onClick}>
           <a href="#">Menu</a>
         </CustomMenu>
       </RightMenu>
 
-      <BurgerMenu show={burgerState}>
+      <BurgerMenu isOpen={props.menuState}>
         <CloseWrapper>
-          <CustomClose onClick={() => setBurgerState(false)} />
+          <CustomClose onClick={props.onClose} />
         </CloseWrapper>
         <li>
           <a href="#">Model S</a>
@@ -115,6 +114,8 @@ const Logo = styled.div`
     width: 120px;
     background-size: contain;
   }
+  filter: ${(props) => (props.isBlured ? "blur(5px);" : "none;")};
+  transition: filter 0.35s ease-in;
 `;
 
 const Menu = styled.div`
@@ -125,6 +126,8 @@ const Menu = styled.div`
   gap: 30px;
   font-weight: 600;
   flex-wrap: nowrap;
+  filter: ${(props) => (props.isBlured ? "blur(5px);" : "none;")};
+  transition: filter 0.35s ease-in;
 
   @media (max-width: 1024px) {
     display: none;
@@ -158,7 +161,8 @@ const BurgerMenu = styled.div`
   list-style: none;
   text-align: left;
   padding: 30px 30px;
-  transform: ${(props) => (props.show ? "translateX(0)" : "translateX(100%)")};
+  transform: ${(props) =>
+    props.isOpen ? "translateX(0);" : "translateX(100%);"}
   transition: transform 0.35s ease-in;
   li {
     padding: 8px;
