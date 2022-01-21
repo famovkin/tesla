@@ -3,7 +3,6 @@ import styled from "styled-components";
 import CloseIcon from "@mui/icons-material/Close";
 
 function Header(props) {
-  console.log(props);
   return (
     <Container>
       <Logo isBlured={props.menuState}>
@@ -150,7 +149,7 @@ const CustomMenu = styled.div`
 `;
 
 const BurgerMenu = styled.div`
-  overflow-y: scroll;
+  overflow: auto;
   position: fixed;
   right: 0;
   bottom: 0;
@@ -160,7 +159,7 @@ const BurgerMenu = styled.div`
   z-index: 3;
   list-style: none;
   text-align: left;
-  padding: 30px 30px;
+  padding: 15px 15px;
   transform: ${(props) =>
     props.isOpen ? "translateX(0);" : "translateX(100%);"}
   transition: transform 0.35s ease-in;
@@ -181,5 +180,4 @@ const CloseWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-bottom: 30px;
 `;
