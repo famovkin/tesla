@@ -24,7 +24,7 @@ function Section({
             {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
           </TextButtons>
         </Fade>
-        <DownArrow src="https://famovkin.github.io/tesla/images/down-arrow.svg"></DownArrow>
+        <DownArrow src="https://famovkin.github.io/tesla/images/down-arrow.svg" />
       </GroupButtons>
     </Wrap>
   );

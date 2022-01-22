@@ -6,13 +6,8 @@ import Header from "./components/Header";
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  function handleMenuClick() {
-    setMenuOpen(true);
-  }
-
-  function handleMenuCloseClick() {
-    setMenuOpen(false);
-  }
+  const handleMenuClick = () => setMenuOpen(true);
+  const handleMenuCloseClick = () => setMenuOpen(false);
 
   return (
     <div className="App">
